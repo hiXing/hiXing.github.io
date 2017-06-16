@@ -23,7 +23,8 @@ github: hixing
 # avatar and Favicon
 #avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
 avatar: https://hixing.github.io/assets/img/avatar.jpg
-favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+#favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+favicon: https://hixing.github.io/assets/img/icon.ico
 
 # disqus config
 disqus:
