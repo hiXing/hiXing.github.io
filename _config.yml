@@ -21,7 +21,8 @@ github: hixing
 #linkedin: 
 
 # avatar and Favicon
-avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+#avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+avatar: https://hixing.github.io/assets/img/avatar.jpg
 favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
 
 # disqus config
@@ -29,9 +30,9 @@ disqus:
   shortname: suyan-zh
 
 # google analytics config
-#ga:
-#  id: UA-54767140-1
-#  url: yansu.org
+ga:
+  id: UA-101159015-1
+  url: hixing.github.io
 
 # Build settings
 permalink: /:year/:month/:day/:title.html
