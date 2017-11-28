@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+	<title>图片浏览</title>
+	<style type="text/css">
+		.box{
+			text-align: center;
+		}
+		.btn{
+			display: inline-block;
+			height: 30px;
+			line-height: 30px;
+			border: 1px solid #ccc;
+			background-color: #fff;
+			padding: 0 10px;
+			margin-right: 50px;
+			color: #333;
+		}
+		.btn:hover{
+			background-color: #fff;
+		}
+
+		.wrapper{
+			display: -webkit-flex;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.left{
+			width: 200px;
+			height: 100px;
+			background: yellow;
+			/* float: left; */
+			/* top: 0;
+			left: 0; */
+		}
+		.right{
+			width: 200px;
+			height: 300px;
+			background: green;
+			/* float: right; */
+			/* position: absolute;
+			top: 100;
+			right: 0; */
+		}
+		.middle{
+			width: 100%;
+			height: 100px;
+			background: red;
+			margin: 0 20px;
+		}
+		</style>
+		<style type="text/css">
+			input{padding: 0;width: 572px; height: 34px; }
+		</style>
+</head>
+<body>
+	<div class="box">
+		<img src="https://www.baidu.com/img/bd_logo1.png" alt="pic" id="img" />
+		<br/>
+		<textarea></textarea>
+		<br />
+		<input type="text" name="i_search"/>
+		<p>
+			<a href="javascript:;" class="btn" data-control="prev">上一页</a>
+			<a href="javascript:;" class="btn" data-control="next">下一页</a>
+		</p>
+	</div>
+	
+	<div class="wrapper">
+		<div class="left" style="text-align:center">左栏</div>
+		<div class="middle">中间栏</div>
+		<div class="right">右栏</div>
+		<div class="one" >多出来的一个</div>
+		<div class="two">多出来的第二</div>
+		<div class="three">多出来的一行</div>
+	</div>
+	
+
+</body>
+</html> 

@@ -1,0 +1,50 @@
+<html type="text/html">
+<head><title>动画6</title></head>
+<body>
+<style type="text/css">
+.load {
+margin: 100px auto 0;
+width: 150px;
+text-align: center;
+}
+.load > div {
+width: 30px;
+height: 30px;
+background-color: #abcdfe;
+border-radius: 100%;
+display: inline-block;
+-webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+animation: bouncedelay 1.4s infinite ease-in-out;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+.load .bounce1 {
+-webkit-animation-delay: -0.32s;
+animation-delay: -0.32s;
+}
+.load .bounce2 {
+-webkit-animation-delay: -0.16s;
+animation-delay: -0.16s;
+}
+@-webkit-keyframes bouncedelay {
+0%, 80%, 100% {-webkit-transform: scale(0.0)}
+40% { -webkit-transform: scale(1.0)}
+}
+@keyframes bouncedelay {
+0%, 80%, 100% {
+transform: scale(0.0);
+-webkit-transform: scale(0.0);
+}
+40% {
+transform: scale(1.0);
+-webkit-transform: scale(1.0);
+}
+}
+</style>
+<div class="load">
+<div class="bounce1"></div>
+<div class="bounce2"></div>
+<div class="bounce3"></div>
+</div>
+</body>
+</html>

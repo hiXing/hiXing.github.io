@@ -1,0 +1,51 @@
+<html type="text/html">
+<head><title>css动画3</title></head>
+<body>
+<style type="text/css">
+.load {
+width: 80px;
+height: 80px;
+
+position: relative;
+margin: 100px auto;
+}
+
+.double-bouncel, .double-bounce2 {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: #abcdfe;
+opacity: 0.6;
+position: absolute;
+top: 0;
+left: 0;
+
+-webkit-animation: bounce 2.0s infinite ease-in-out;
+animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+-webkit-animation-delay: -1.0s;
+animation-delay:  -1.0s;
+}
+@-webkit-keyframes bounce {
+0%, 100% { -webkit-transform: scale(0.0)}
+50% {-webkit-transform: scale(1.0)}
+}
+@keyframes bounce {
+0%, 100% {
+transform: scale(0.0);
+-webkit-transform: scale(0.0);
+}
+50% {
+transform: scale(1.0);
+-webkit-transform: scale(1.0);
+}
+}
+</style>
+<div class="load">
+<div class="double-bouncel">&nbsp;</div>
+<div class="double-bounce2">&nbsp;</div>
+<div>
+</body>
+</html>
