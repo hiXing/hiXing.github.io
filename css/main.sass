@@ -15,17 +15,20 @@ $font: 'Open Sans', 'Hiragino Sans GB', sans-serif
 $gradient-start: #C2E987
 $gradient-end:   #309E85
 // $sidebar-bg: linear-gradient(136deg, $gradient-start, $gradient-end)
-
-$sidebar-bg: #309E85
+$sidebar-bg: #336699
 $sidebar-left-bg: #474d57
-$sidebar-right-bg: #f7f7f7  
+$sidebar-right-bg: #cccccc  
 //#474d57   #f7f7f7
 
 // # Sidebar Left
-$sidebar-left-width: 120px
+$sidebar-left-width: 100px
+// # Sidebar Right
+$sidebar-right-width: 360px
+// # Sidebar width
+$sidebar-width: $sidebar-left-width + $sidebar-right-width
 
 // Avatar
-$avatar-size: 90px
+$avatar-size: 60px
 $avatar-border-size: 4px
 $avatar-border-color: rgba(255, 255, 255, .75)
 
@@ -42,10 +45,7 @@ $tag-font-size: 17px
 $tag-color: rgba(255, 255, 255, .7)
 $tag-hover-color: rgba(255, 255, 255, .85)
 $tag-active-color: #000000
-$tag-border-color: rgba(255, 255, 255, 1)
-
-// # Sidebar Right
-$sidebar-right-width: 360px
+$tag-border-color: rgba(252,252, 252, 1)
 
 // Search
 $search-box-height: 32px
@@ -53,7 +53,7 @@ $search-box-font-size: 18px
 
 $search-box-color: #AAAAAA
 $search-box-placeholder: rgba(84, 84, 84, .7)
-$search-box-bg: #c9daf8
+$search-box-bg: #f2f7ff
 
 // Toc
 $toc-color: #55606F
@@ -66,8 +66,7 @@ $toc-bullet-size: 18px
 $toc-bullet-unread: $gradient-end
 $toc-bullet-read: $toc-color
 
-// # Sidebar width
-$sidebar-width: $sidebar-left-width + $sidebar-right-width
+
 
 // # Post
 $post-max-width: 800px

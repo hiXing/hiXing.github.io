@@ -206,6 +206,7 @@ yarn add react react-dom
 
 在 index.js 中写入
 
+
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -213,17 +214,18 @@ import App from './components/App.js';
 import { Router, Route, hashHistory } from 'react-router';
 
 ReactDOM.render(
-  (<Router history={hashHistory}>
-    <Route path="/" component={App}/>
-    <Route path="/about" component={App} />
-  </Router>),
-  document.getElementById('root')
-);
+    (
+      <Router history={hashHistory}>
+        <Route path="/" component={App} />
+        <Route path="/about" component={App} />
+      <Router/>
+      ),
+      document.getElementById('root')
+  );
 
 ```
 
-
-在 App.js 中写入
+在 *App.js* 中写入
 
 ```javascript
 import React from 'react';
@@ -256,7 +258,7 @@ yarn add react-router
 "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --progress --colors"
-    
+
   },
 ```
 
