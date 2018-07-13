@@ -8,7 +8,7 @@ layout: default
     <span class="post-meta-span tag">{{ page.tags | join: ', ' }}</span>
     {% endif %}
 
-    <span>字数：{{ page.content | number_of_words }}</span>
+    <span class="post-meta-span" style="float: right;">{{ page.content | number_of_words }}</span>
   </div>
 
   <h1 class="post-title">{{ page.title }}</h1>

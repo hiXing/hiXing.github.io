@@ -25,16 +25,17 @@ git show xxxx # 查看某次修改
 ```
 
 ### 标签功能
-    
-```bash    
+
+```bash
 git tag # 显示所有标签
 git tag -l 'v1.4.2.*' # 显示 1.4.2 开头标签
-git tag v1.3 # 简单打标签   
+git tag v1.3 # 简单打标签
 git tag -a v1.2 9fceb02 # 后期加注标签
 git tag -a v1.4 -m 'my version 1.4' # 增加标签并注释， -a 为 annotated 缩写
 git show v1.4 # 看某一标签详情
 git push origin v1.5 # 分享某个标签
 git push origin --tags # 分享所有标签
+git tag -d v1.5  # 删除标签
 ```
 
 ### 回滚操作
@@ -67,10 +68,29 @@ git mv a.php ./test/a.php
 ### 查看文件修改
 
 ```bash
-git diff          # 查看未暂存的文件更新 
-git diff --cached # 查看已暂存文件的更新 
+git diff          # 查看未暂存的文件更新
+git diff --cached # 查看已暂存文件的更新
 ```
-    
+
+### 查看历史
+
+```
+选项                      说明
+-p                  按补丁格式显示每个更新之间的差异。
+--word-diff         按 word diff 格式显示差异。
+--stat              显示每次更新的文件修改统计信息。
+--shortstat         只显示 --stat 中最后的行数修改添加移除统计。
+--name-only         仅在提交信息后显示已修改的文件清单。
+--name-status       显示新增、修改、删除的文件清单。
+--abbrev-commit     仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+--relative-date     使用较短的相对时间显示（比如，“2 weeks ago”）。
+--graph             显示 ASCII 图形表示的分支合并历史。
+--pretty            使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和format（后跟指定格式）。
+--oneline           --pretty=oneline --abbrev-commit 的简化用法。
+
+```
+
+
 ### 暂存和恢复当前staging
 
 ```bash
@@ -90,7 +110,7 @@ git rebase -i 0580eab8
 ## 分支管理
 
 ### 创建分支
-    
+
 ```bash
 git branch develop # 只创建分支
 git checkout -b master develop # 创建并切换到 develop 分支
@@ -141,7 +161,7 @@ git clone https://github.com/chaconinc/MainProject
 git submodule init
 git submodule update
 ```
-    
+
 ## Git设置
 
 Git的全局设置在`~/.gitconfig`中，单独设置在`project/.git/config`下。
@@ -176,3 +196,73 @@ git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
 ```
+
+---
+
+
+# git创建远程库
+
+>git中一般使用 git init 创建的库不允许同一分支多个work tree直接提交，如果这么做有可能会出现以下问题：
+
+>remote: error: refusing to update checked out branch: refs/heads/master
+
+>要解决这个问题可以有以下四种方式
+
+## 创建共享库（推荐）
+
+    # 创建共享库(bare)
+    $ mkdir /git/repo.git && cd /git/repo.git && git init --bare
+
+    # 本地库
+    $ mkdir ~/repo && cd ~/repo && git init
+    # 创建一个文件
+    $ vi foo
+    # 增加新增文件到库管理
+    $ git add .
+    # 提交
+    $ git commit
+    # 增加共享库位置
+    $ git remote add origin file:///git/repo.git
+    # 提交更改
+    $ git push origin master
+
+## 不工作在同一库下（推荐）
+
+    # 创建库
+    $ mkdir /git/repo  && cd /git/repo && git init
+    # 创建一个文件
+    $ vi foo
+    # 增加新增文件到库管理
+    $ git add .
+    # 提交
+    $ git commit
+    # 新建一个分支
+    $ git branch test
+
+    # 本地库
+    $ git clone file:///git/repo && cd repo
+    # 切换到分支test
+    $ git checkout test
+    # 修改文件
+    $ echo "foo">foo
+    # 提交
+    $ git commit
+    # 增加远程库位置
+    $ git remote add origin flie:///git/repo
+    # 提交更改
+    $ git push origin test
+
+## 忽略冲突1
+修改远程库.git/config添加下面代码
+
+    [receive]
+        denyCurrentBranch = ignore
+
+这种方式不能直接显示在结果的work tree上，如果要显示，需要使用
+
+    git reset --hard才能看到
+
+## 忽略冲突2
+在远程库上
+
+    git config -bool core.bare true
