@@ -36,7 +36,7 @@ ga:
   url: hixing.github.io
 
 # Build settings
-permalink: /:year/:month/:day/:title.html
+permalink: /:year/:month/:title.html
 markdown: kramdown
 highlighter: rouge
 mathjax: disabled
